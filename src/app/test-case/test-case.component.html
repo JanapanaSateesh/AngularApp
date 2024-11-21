@@ -1,0 +1,23 @@
+<div class="test-case-list">
+    <h2>Test Cases</h2>
+    <table>
+      <tr>
+         <th>Test Case ID</th>
+         <th>Test Case Name</th>
+      </tr>
+      
+         @for(testcase of testCases; track testcase.id){
+            <tr>
+            <td><a [routerLink]="['/testcase-detail',testcase.id]">{{ testcase.id }}</a></td>
+            <td><a [routerLink]="['/testcase-detail',testcase.id]">{{ testcase.name }}</a></td>
+            </tr>
+           }
+    
+      
+    </table>
+    
+        
+      
+    
+  </div>
+  

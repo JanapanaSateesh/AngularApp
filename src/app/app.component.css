@@ -1,0 +1,68 @@
+/* app.component.css */
+
+/* Apply background to the entire page */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Full height of the viewport */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Sidebar on the left and content on the right */
+  }
+  
+  /* Container that holds sidebar and main content */
+  .container {
+    display: flex; /* Flexbox layout */
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* Sidebar Styling */
+  .sidebar {
+    width: 200px; /* Fixed width for sidebar */
+    background-color: #2c3e50; /* Dark background */
+    color: white;
+    position: fixed; /* Sidebar stays fixed */
+    height: 100vh; /* Full height of the viewport */
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional: Shadow for the sidebar */
+  }
+  
+  /* Sidebar Links Styling */
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #ecf0f1; /* Light text color */
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar ul li a:hover {
+    background-color: #34495e; /* Hover color */
+  }
+  
+  .sidebar ul li a.active {
+    background-color: #2980b9; /* Active link color */
+    font-weight: bold;
+  }
+  
+  /* Main content area */
+  .main-content {
+    margin-left: 200px; /* Offset the content to the right of the sidebar */
+    padding: 20px;
+    width: calc(100% - 250px); /* Use remaining space for content */
+    overflow-y: auto; /* Allow content to scroll if necessary */
+  }
+  
