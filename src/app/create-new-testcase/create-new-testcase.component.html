@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row text-center">
+        <div class="col-4">
+            <div class="form-floating mb-3 mt-3">
+                <select class="form-select" [(ngModel)]="applicationName" name="applicationName" >
+                    <option>Synergy Studio</option>
+                    <option>Touchstone</option>
+                    <option>TouchstoneRe</option>
+                  </select>
+                <label for="applicationName">Application Name</label>
+            </div>            
+        </div>
+        <div class="col-4">
+            <div class="form-floating mb-3 mt-3">
+                <input type="text" class="form-control" id="feature" placeholder="Enter Feature" name="feature" [(ngModel)]="feature">
+                <label for="feature">Feature</label>
+              </div>
+        </div>
+        <div class="col-4">
+            <div class="form-floating mb-3 mt-3">
+                <input type="text" class="form-control" id="subfeature" placeholder="Enter SubFeature" name="subfeature" [(ngModel)]="subFeature">
+                <label for="subfeature">SubFeature</label>
+              </div>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-12">
+            <div class="form-floating mb-3 mt-3">
+                <input type="text" class="form-control" id="testcasename" placeholder="Enter TestCaseName" name="testcasename" [(ngModel)]="testCaseName">
+                <label for="testcasename">Test Case Name</label>
+              </div>
+        </div>
+        <div class="col-3">
+            <button type="button" class="btn btn-outline-success" (click)="createTestCase()">Create New TestCase</button>
+        </div>
+    </div>
+</div>
+

@@ -1,2 +1,76 @@
-<p>testcasedetail works!</p>
-<h1>{{testCaseId}}</h1>
+
+<h1><p class="text-primary">{{testCaseId}}: {{testCaseName}}</p></h1>
+<div class="container">
+    <div class="row text-center">
+        <div class="col-4">
+            <div class="form-floating mb-3 mt-3-sm">
+                <select class="form-select"  name="action" [(ngModel)]="action">
+                    <option>Open</option>
+                    <option>Click</option>
+                    <option>Type</option>
+                  </select>
+                <label for="action">Action</label>
+            </div>            
+        </div>
+        <div class="col-4">
+            <div class="form-floating mb-3 mt-3-sm">
+                <input type="text" class="form-control" id="input" placeholder="Enter Data" name="input" [(ngModel)]="input" >
+                <label for="input">Input</label>
+              </div>
+        </div>
+        <div class="col-4">
+            <div class="form-floating mb-3 mt-3-sm">
+                <input type="text" class="form-control" id="xpath" placeholder="Enter Xpath" name="xpath" [(ngModel)]="xpath">
+                <label for="xpath">Xpath</label>
+              </div>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <button type="button" class="btn btn-outline-success" (click)="addTestCaseStep()">Add Step</button>
+        </div>
+        
+        <div class="col-6 text-end">
+            <button type="button" class="btn btn-outline-success" (click)="runTest()">Run Test</button>
+        </div>
+    </div>
+    
+</div>
+
+##List The Table Data
+<div class="container">
+    <div class="container mt-3">
+             
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Action</th>
+              <th>Input</th>
+              <th>Xpath</th>
+            </tr>
+          </thead>
+          <tbody>
+           @if(response.length>0){
+              @for(apiresponse of response; track $index;){
+                 <tr>
+                    <td>{{$index+1}}</td>
+                    <td>{{apiresponse.Action}}</td>
+                    <td>{{apiresponse.Input}}</td>
+                    <td>{{apiresponse.Xpath}}</td>
+                   
+                  </tr>
+               }
+           }@else{
+              <h1 class="text-end">Please Add The Step</h1>
+           }
+            
+           
+            
+          </tbody>
+        </table>
+      </div>
+</div>
+
+

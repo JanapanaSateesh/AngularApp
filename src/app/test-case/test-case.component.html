@@ -1,23 +1,37 @@
-<div class="test-case-list">
-    <h2>Test Cases</h2>
-    <table>
-      <tr>
+<div class="container">
+   <div class="row">
+      <div class="col-6">
+         <h1>Test Cases</h1>
+      </div>
+      <div class="col-6 text-end">
+         <button type="button" class="btn btn-outline-success" [routerLink]="'/createnewtestcase'">Create New Test Case</button>
+      </div>
+   </div>
+</div>
+<div class="container mt-3">
+             
+   <table class="table table-striped">
+     <thead>
+       <tr>
          <th>Test Case ID</th>
-         <th>Test Case Name</th>
-      </tr>
-      
-         @for(testcase of testCases; track testcase.id){
+         <th>TestCase Name</th>
+       </tr>
+     </thead>
+     <tbody>
+      @if(testcaseDetails.length>0){
+         @for(testcase of testcaseDetails; track $index;){
             <tr>
-            <td><a [routerLink]="['/testcase-detail',testcase.id]">{{ testcase.id }}</a></td>
-            <td><a [routerLink]="['/testcase-detail',testcase.id]">{{ testcase.name }}</a></td>
-            </tr>
-           }
-    
+               <td><a [routerLink]="['/testcase-detail',testcase.Id,testcase.TestCaseName]">{{testcase.Id}}</a></td>
+               <td>{{testcase.TestCaseName}}</td>
+             </tr>
+          }
+      }@else{
+         <h1 class="text-center">Please Create New Test Case</h1>
+      }
+       
       
-    </table>
-    
-        
-      
-    
-  </div>
+       
+     </tbody>
+   </table>
+ </div>
   

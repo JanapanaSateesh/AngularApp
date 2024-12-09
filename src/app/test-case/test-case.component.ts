@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink, RouterModule } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-test-case',
@@ -8,11 +9,20 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
   templateUrl: './test-case.component.html',
   styleUrl: './test-case.component.css'
 })
-export class TestCaseComponent {
+export class TestCaseComponent implements OnInit{
 
-  testCases = [
-    { id: '1', name: 'Login with valid credentials' },
-    { id: '2', name: 'Search on Google' }
-  ];
+  testcaseDetails:any=[];
+  constructor(
+    private http:HttpClient
+  ){}
+
+  ngOnInit(): void {
+    this.http.get("http://127.0.0.1:5000/gettestcases").subscribe((result)=>{
+      
+    this.testcaseDetails=result;
+    })
+  }
+
+
 
 }
